@@ -9,9 +9,24 @@ pipeline {
                     script {deploy_tomcat.deploy_tomcat()}
                 
             }
-        }                
+        }
+        stage('maven build') {
+            steps {
+                
+                    script {maven_build.maven_build()}
+                
+            }
+        } 
+           stage('codebuild') {
+            steps {
+                
+                    script {codebuild.codebuild()}
+                
+            }
+        }                  
                                
         
+
     }
 
 }
