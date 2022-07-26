@@ -17,7 +17,7 @@ pipeline {
                 
             }
         } 
-        tage('deploy java to tomcat') {
+        tag('deploy java to tomcat') {
             steps {
                 
                     script {deploy_tomcat.deploy_tomcat()}
