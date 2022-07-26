@@ -4,3 +4,4 @@ def maven_build() {
    sh 'mvn clean install'
 
 }
+ return this 

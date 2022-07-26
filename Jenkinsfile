@@ -13,7 +13,7 @@ pipeline {
            stage('codebuild') {
             steps {
                 
-                    script {codebuild.codebuild()}
+                    script {awscode_build.awscode_build()}
                 
             }
         } 
