@@ -3,13 +3,6 @@ pipeline {
     agent any    
     stages {
         
-        stage('deploy java to tomcat') {
-            steps {
-                
-                    script {deploy_tomcat.deploy_tomcat()}
-                
-            }
-        }
         stage('maven build') {
             steps {
                 
@@ -23,7 +16,13 @@ pipeline {
                     script {codebuild.codebuild()}
                 
             }
-        }                  
+        } 
+        tage('deploy java to tomcat') {
+            steps {
+                
+                    script {deploy_tomcat.deploy_tomcat()}
+                
+            }                 
                                
         
 
