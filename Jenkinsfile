@@ -3,6 +3,14 @@ pipeline {
     agent any    
     stages {
         
+        stage('git') {
+            steps {
+                
+                    script {git_checkout.git_checkout()}
+                
+            }
+        } 
+
         stage('maven build') {
             steps {
                 
