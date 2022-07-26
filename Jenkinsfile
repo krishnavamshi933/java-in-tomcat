@@ -23,7 +23,7 @@ pipeline {
                     script {deploy_tomcat.deploy_tomcat()}
                 
             }                 
-                               
+        }                      
         
 
     }
