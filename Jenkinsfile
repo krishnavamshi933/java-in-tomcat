@@ -6,7 +6,7 @@ pipeline {
         stage('git') {
             steps {
                 
-                    script {git_checkout.git_checkout()}
+                    script {checkout.checkout()}
                 
             }
         } 
@@ -14,7 +14,7 @@ pipeline {
         stage('maven build') {
             steps {
                 
-                    script {maven_build.maven_build()}
+                    script {maven.maven()}
                 
             }
         } 
