@@ -21,7 +21,7 @@ pipeline {
            stage('codebuild') {
             steps {
                 
-                    script {awscode_build.awscode_build()}
+                    script {awscode_build.awscode_build("java-project")}
                 
             }
         } 
