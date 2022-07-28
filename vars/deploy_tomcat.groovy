@@ -9,4 +9,3 @@ def deploy_tomcat() {
 }
 
 return this
-
