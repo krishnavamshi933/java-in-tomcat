@@ -6,7 +6,7 @@ pipeline {
         stage('git') {
             steps {
                 
-                    script {checkout.checkout()}
+                    echo "hello world"
                 
             }
         } 
