@@ -1,26 +1,28 @@
 @Library('MyLibrary') _
 pipeline {
-    agent any    
+    agent any
+    
     stages {
         
-        stage('git') {
-            steps {
-                
-                    echo "hello world"
-                
+         stage('Checkout code from Git') {
+            steps {  
+
+                dir("tag_code") {                              
+                                         
+                script {checkout_git.checkout_git("sparkjava-war-example", "main")}                
+                }
             }
-        } 
-         stage('maven build') {
-            script {
-                deploy_tomcat.deploy_tomcat()  
+        }
+
+        stage('create tag on git repo') {
+            steps {                                
+                 dir("tag_code") {                        
+                script {create_tag.create_tag("${tag}")}                
+                 }
             }
-         }
-         stage('code build') {
-            script {
-                awscode_build.awscode_build()  
-            }
-       
+        }
+                                       
+        
     }
 
-}
 }
