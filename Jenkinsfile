@@ -9,7 +9,7 @@ pipeline {
 
                 dir("tag_code") {                              
                                          
-                script {checkout_git.checkout_git("sparkjava-war-example", "main")}                
+                script {checkout_git.checkout_git("war-web-project", "master")}                
                 }
             }
         }
