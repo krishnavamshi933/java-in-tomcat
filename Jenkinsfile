@@ -21,13 +21,16 @@ pipeline {
                  }
             }
         }
-        stage('deploy java to tomcat') {
+        stage('aws trigger') {
             steps {
+                dir("tag_code")
                 
-                    script {deploy_tomcat.deploy_tomcat()}
+                    script {
+                        awscode_build.awscode_build("java-project", "${tag}")
+                        }
                 
             }
-        }         
+        }             
                                        
         
     }
