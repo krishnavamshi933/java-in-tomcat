@@ -11,19 +11,7 @@ pipeline {
             }
         } 
 
-        stage('maven build') {
-            steps {
-                
-                    script {maven.maven()}
-                
-            }
-        } 
-           stage('codebuild') {
-            steps {
-                
-                    script {awscode_build.awscode_build("java-project")}
-                
-            }
+       
         } 
         stage('deploy java to tomcat') {
             steps {
